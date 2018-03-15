@@ -11,7 +11,7 @@
                     ".validate": "newData.exists() && newData.isString() && newData.val().matches(/^[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]$/i)"
                 },
                 "province": {
-                    ".validate": "!newData.exists() || (newData.isString() && newData.val().matches(/(AB)|(BC)|(MB)|(NB)|(NL)|(NS)|(NT)|(NU)|(ON)|(PE)|(QC)|(SK)|(YT)| /))"
+                    ".validate": "!newData.exists() || (newData.isString() && newData.val().matches(/(AB)|(BC)|(MB)|(NB)|(NL)|(NS)|(NT)|(NU)|(ON)|(PE)|(QC)|(SK)|(YT)| |/))"
                 },
                 "address": {
                     ".validate": "!newData.exists() || (newData.isString() && newData.val().length < 50)"
