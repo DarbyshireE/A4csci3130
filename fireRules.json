@@ -5,19 +5,19 @@
     "businesses": {
             "$business": {
                 "name": {
-                    ".validate": "newData.isString() && newData.val().length < 49 && newData.val().length > 1"
+                    ".validate": "newData.exists() && newData.isString() && newData.val().length < 49 && newData.val().length > 1"
                 },
                 "number": {
-                    ".validate": "newData.isString() && newData.val().matches(/^[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]$/i)"
+                    ".validate": "newData.exists() && newData.isString() && newData.val().matches(/^[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]$/i)"
                 },
                 "province": {
-                    ".validate": "newData.isString() && newData.val().matches(/(AB)|(BC)|(MB)|(NB)|(NL)|(NS)|(NT)|(NU)|(ON)|(PE)|(QC)|(SK)|(YT)| /)"
+                    ".validate": "!newData.exists() || (newData.isString() && newData.val().matches(/(AB)|(BC)|(MB)|(NB)|(NL)|(NS)|(NT)|(NU)|(ON)|(PE)|(QC)|(SK)|(YT)| /))"
                 },
                 "address": {
-                  ".validate": "newData.isString() && newData.val().length < 50"
+                    ".validate": "!newData.exists() || (newData.isString() && newData.val().length < 50)"
                 },
                 "primaryBusiness": {
-                  ".validate": "newData.isString() && newData.val().matches(/(Fisher)|(Distributor)|(Processor)|(Fish Monger)/)"
+                    ".validate": "newData.exists() && newData.isString() && newData.val().matches(/(Fisher)|(Distributor)|(Processor)|(Fish Monger)/)"
                }
             }
         }

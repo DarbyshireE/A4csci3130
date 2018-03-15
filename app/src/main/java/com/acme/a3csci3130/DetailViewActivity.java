@@ -45,14 +45,13 @@ public class DetailViewActivity extends Activity {
         Business person = new Business(personID, number, name, primaryBusiness,
                 address, province);
         appState.firebaseReference.child(personID).setValue(person);
-
+        finish();
     }
 
     public void eraseBusiness(View v)
     {
         String personID = receivedPersonInfo.uid;
         appState.firebaseReference.child(personID).removeValue();
-        Intent intent=new Intent(this, MainActivity.class);
-        startActivity(intent);
+        finish();
     }
 }

@@ -64,7 +64,5 @@ public class MainActivity extends Activity {
         intent.putExtra("Business", person);
         startActivity(intent);
     }
-
-
-
+    
 }
